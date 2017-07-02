@@ -736,6 +736,13 @@
             <Properties></Properties>
             <GeneratedAssembliesFile>$(DirBuildTemp)\nBuildKit.Test.$(TestConfiguration).$(PlatformWithoutSpaces).props</GeneratedAssembliesFile>
         </SolutionsToBuild>
+        <SolutionsToBuild Include="$(DirSrc)\nBuildKit.Test.sln">
+            <Configuration>$(ProductionConfiguration)</Configuration>
+            <Platform>$(Platform)</Platform>
+            <Targets>Rebuild</Targets>
+            <Properties></Properties>
+            <GeneratedAssembliesFile>$(DirBuildTemp)\nBuildKit.Test.$(TestConfiguration).$(PlatformWithoutSpaces).props</GeneratedAssembliesFile>
+        </SolutionsToBuild>
     </ItemGroup>
 
     <PropertyGroup>
