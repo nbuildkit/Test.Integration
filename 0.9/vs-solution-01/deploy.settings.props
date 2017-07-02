@@ -448,7 +448,7 @@
         e.g. \\MyServer\${ProductNameInFilePath}\${VersionSemantic}
     -->
     <ItemGroup>
-        <PushToDirectorySpecs Include="$(UriArtefacts)\artifacts\${ProductNameInFilePath}\${VersionSemantic}">
+        <PushToDirectorySpecs Include="$(UriArtefacts)\${ProductNameInFilePath}\${VersionSemantic}">
             <IncludedFiles>
                 $(DirBuildDeploy)\*.zip
             </IncludedFiles>
@@ -467,7 +467,7 @@
             If the repository needs authentication then the API key should be defined via an environment variable:
             NuGetApiKey - The NuGet API key for the NuGet feed
         -->
-        <NuGetSourceUrl>$(UriNuGet)\nuget</NuGetSourceUrl>
+        <NuGetSourceUrl>$(UriNuGet)</NuGetSourceUrl>
     </PropertyGroup>
     <!--
         The ItemGroup defining which packages should be pushed up to the NuGet package source.
@@ -501,7 +501,7 @@
         <!--
             The URL / UNC path to which all the symbol packages should be pushed.
         -->
-        <SymbolServerUncPath>$(UriSymbols)\symbols</SymbolServerUncPath>
+        <SymbolServerUncPath>$(UriSymbols)</SymbolServerUncPath>
     </PropertyGroup>
     <ItemGroup>
         <!--
