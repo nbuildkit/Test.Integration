@@ -313,7 +313,7 @@
         <!-- <DirPackages>$(DirWorkspace)\packages</DirPackages> -->
 
         <!-- The directory that contains the source files for the project -->
-        <!-- <DirSrc>$(DirWorkspace)\src</DirSrc> -->
+        <DirSrc>$(DirUserSettings)\src</DirSrc>
 
         <!-- The directory that contains the template files for the project -->
         <!-- <DirTemplates>$(DirWorkspace)\templates</DirTemplates> -->
