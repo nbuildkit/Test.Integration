@@ -16,7 +16,7 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
-    <OutputPath>$(SolutionDir)\..\..\..\build\bin\$(Configuration)\</OutputPath>
+    <OutputPath>$([System.IO.Path]::Combine($(SolutionDir), '..\..\..\build\bin\$(Configuration)\'))</OutputPath>
   </PropertyGroup>
   <PropertyGroup>
     <ShouldSign Condition=" '$(ShouldSign)' == '' ">true</ShouldSign>
