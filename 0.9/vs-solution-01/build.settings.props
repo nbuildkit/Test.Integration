@@ -411,6 +411,7 @@
             <PostSteps>
             </PostSteps>
         </BuildStepsToExecute>
+        <!--
         <BuildStepsToExecute Include="$(BuildStepsPrepareGenerateLicenses)">
             <Properties>
             </Properties>
@@ -424,6 +425,7 @@
             <PostSteps>
             </PostSteps>
         </BuildStepsToExecute>
+        -->
         <BuildStepsToExecute Include="$(BuildStepsPrepareGenerateFiles)">
             <Properties>
             </Properties>
