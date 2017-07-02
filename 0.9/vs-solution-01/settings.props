@@ -105,20 +105,20 @@
             * Copyrights
             * API documentation
         -->
-        <ProductName>nBuildKit.Test.VbNet</ProductName>
+        <ProductName>nBuildKit.Test</ProductName>
 
         <!--
             The name of the product that can be used as part of a file path. This is for instance used for:
             * Deployment directory naming
         -->
-        <ProductNameInFilePath>nBuildKit.Test.VbNet</ProductNameInFilePath>
+        <ProductNameInFilePath>nBuildKit.Test</ProductNameInFilePath>
 
         <!--
             The description of the product. This is for instance used for:
             * Installer information
         -->
         <ProductDescription>
-            The test of the VB.NET parts of nBuildKit
+            The test of nBuildKit
         </ProductDescription>
 
         <!--
@@ -126,7 +126,7 @@
             * Finding the correct assemblies and namespaces for unit testing and coverage reporting
             * Generated code files that contain namespaces
         -->
-        <ProductNamespace>NBuildKit.Test.VbNet</ProductNamespace>
+        <ProductNamespace>NBuildKit.Test</ProductNamespace>
 
         <!--
             The URL of the product website. This is for instance used for:
