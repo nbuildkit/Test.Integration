@@ -12,7 +12,7 @@
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <SolutionDir Condition="'$(SolutionDir)' == '' or '$(SolutionDir)' == '*undefined*'">$(MSBuildProjectDirectory)\..</SolutionDir>
-    <OutputPath>$(SolutionDir)\..\build\bin\$(Configuration)\</OutputPath>
+    <OutputPath>$(SolutionDir)\..\..\..\build\bin\$(Configuration)\</OutputPath>
   </PropertyGroup>
   <PropertyGroup>
     <ShouldSign Condition=" '$(ShouldSign)' == '' ">true</ShouldSign>

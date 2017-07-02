@@ -807,10 +807,17 @@
         <!-- <InternalsVisibletoCompilerConstants>INTERNALS_VISIBLE_TO</InternalsVisibletoCompilerConstants> -->
     </PropertyGroup>
     <ItemGroup>
-        <InternalsVisibleTo Include="Test.Unit.Library">
+        <InternalsVisibleTo Include="Test.Unit.CSharp.Library">
+            <Projects>
+                nBuildKit.Test.CSharp.Library
+            </Projects>
+            <KeyFile>$(DirWorkspace)\nBuildKit.MsBuild.Tests.snk</KeyFile>
+        </InternalsVisibleTo>
+        <InternalsVisibleTo Include="Test.Unit.VbNet.Library">
             <Projects>
                 nBuildKit.Test.VbNet.Library
             </Projects>
+            <KeyFile>$(DirWorkspace)\nBuildKit.MsBuild.Tests.snk</KeyFile>
         </InternalsVisibleTo>
     </ItemGroup>
 
@@ -966,7 +973,6 @@
             <RuleSet>$(DirSrc)\codeanalysis.base.ruleset</RuleSet>
             <TargetFramework>3.5</TargetFramework>
         </FxCopFiles>
-
     </ItemGroup>
     <ItemGroup>
         <!--
