@@ -43,5 +43,5 @@ Imports System.Windows
 <Assembly: System.Diagnostics.CodeAnalysis.SuppressMessage(
     "Microsoft.Usage",
     "CA2243:AttributeStringLiteralsShouldParseCorrectly",
-    Justification = "It's a VCS revision, not a version")>
+    Justification := "It's a VCS revision, not a version")>
 <Assembly: AssemblyInformationalVersion("9.10.11-fake+12")>
