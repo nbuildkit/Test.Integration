@@ -15,6 +15,12 @@
     <SolutionDir Condition="'$(SolutionDir)' == '' or '$(SolutionDir)' == '*undefined*'">$(MSBuildProjectDirectory)\..</SolutionDir>
     <OutputPath>$(SolutionDir)\..\build\bin\$(Configuration)\</OutputPath>
   </PropertyGroup>
+  <PropertyGroup>
+    <ShouldSign Condition=" '$(ShouldSign)' == '' ">true</ShouldSign>
+    <SignAssembly Condition=" '$(ShouldSign)' == 'true' ">true</SignAssembly>
+    <DelaySign Condition=" '$(ShouldSign)' == 'true' ">false</DelaySign>
+    <AssemblyOriginatorKeyFile Condition=" '$(ShouldSign)' == 'true' ">$(MSBuildThisFileDirectory)\..\..\..\..\nbuildkit.msbuild.tests.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
