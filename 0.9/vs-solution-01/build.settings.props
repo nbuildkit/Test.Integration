@@ -9,7 +9,7 @@
         <RedirectBuildOutputToSingleFolder>true</RedirectBuildOutputToSingleFolder>
 
         <!-- The build configuration (debug / release / ...) that will be used to run all the unit tests and the static verification on -->
-        <TestConfiguration>release</TestConfiguration>
+        <TestConfiguration>debug</TestConfiguration>
 
         <!-- The build configuration (debug / release / ..) that will be used to create the binaries that should be deployed -->
         <ProductionConfiguration>release</ProductionConfiguration>
