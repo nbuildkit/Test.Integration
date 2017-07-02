@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D9A90369-E511-436F-A975-321560EB3A61}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>NBuildKit.Test.VbNet.Library</RootNamespace>
-    <AssemblyName>NBuildKit.Test.VbNet.Library</AssemblyName>
+    <RootNamespace>NBuildKit.Test.VBNet.Library</RootNamespace>
+    <AssemblyName>NBuildKit.Test.VBNet.Library</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
@@ -25,7 +25,7 @@
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <DocumentationFile>NBuildKit.Test.VbNet.Library.xml</DocumentationFile>
+    <DocumentationFile>NBuildKit.Test.VBNet.Library.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">

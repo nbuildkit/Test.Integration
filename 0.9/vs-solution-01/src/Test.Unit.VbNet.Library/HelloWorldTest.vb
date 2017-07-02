@@ -1,5 +1,5 @@
 ﻿Imports System.Reflection
-Imports NBuildKit.Test.VbNet.Library
+Imports NBuildKit.Test.VBNet.Library
 Imports System.Globalization
 Imports NUnit.Framework
 

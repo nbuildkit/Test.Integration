@@ -1,5 +1,6 @@
 ﻿Imports System
 Imports System.Reflection
+Imports System.Resources
 Imports System.Runtime.InteropServices
 
 ' General Information about an assembly is controlled through the following
@@ -18,4 +19,10 @@ Imports System.Runtime.InteropServices
 'The following GUID is for the ID of the typelib if this project is exposed to COM
 <Assembly: Guid("615901cd-a143-4da6-b6eb-86829497f755")>
 
+<Assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.MainAssembly)>
 
+<Assembly: System.Diagnostics.CodeAnalysis.SuppressMessage(
+    "Microsoft.Usage",
+    "CA2243:AttributeStringLiteralsShouldParseCorrectly",
+    Justification = "It's a VCS revision, not a version")>
+<Assembly: AssemblyInformationalVersion("9.10.11-fake+12")>

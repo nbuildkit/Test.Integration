@@ -29,4 +29,9 @@ using System.Runtime.InteropServices;
 // Version numbers
 [assembly: AssemblyVersion("1.2.3.4")]
 [assembly: AssemblyFileVersion("5.6.7.8")]
+
+[module: System.Diagnostics.CodeAnalysis.SuppressMessage(
+    "Microsoft.Usage",
+    "CA2243:AttributeStringLiteralsShouldParseCorrectly",
+    Justification = "It's a VCS revision, not a version")]
 [assembly: AssemblyInformationalVersion("9.10.11-fake+12")]

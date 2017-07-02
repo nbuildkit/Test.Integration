@@ -1,4 +1,4 @@
-﻿Imports NBuildKit.Test.VbNet.Library
+﻿Imports NNBuildKit.Test.VBNet.ibrary
 
 
 Module Module1

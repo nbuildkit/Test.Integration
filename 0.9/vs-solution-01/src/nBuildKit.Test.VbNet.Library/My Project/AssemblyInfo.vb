@@ -1,5 +1,6 @@
 ﻿Imports System
 Imports System.Reflection
+Imports System.Resources
 Imports System.Runtime.CompilerServices
 Imports System.Runtime.InteropServices
 
@@ -19,10 +20,19 @@ Imports System.Runtime.InteropServices
 
 <Assembly: ComVisible(False)>
 
+<Assembly: CLSCompliant(true)>
+
+<Assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.MainAssembly)>
+
 'The following GUID is for the ID of the typelib if this project is exposed to COM
 <Assembly: Guid("5e60a5a2-672d-456a-81de-4c2dc9a1bcee")>
 
 'Versions
 <Assembly: AssemblyVersion("1.2.3.4")>
 <Assembly: AssemblyFileVersion("5.6.7.8")>
-<Assembly: AssemblyInformationalVersion("9.10.11-Fake+12")>
+
+<Assembly: System.Diagnostics.CodeAnalysis.SuppressMessage(
+    "Microsoft.Usage",
+    "CA2243:AttributeStringLiteralsShouldParseCorrectly",
+    Justification = "It's a VCS revision, not a version")>
+<Assembly: AssemblyInformationalVersion("9.10.11-fake+12")>

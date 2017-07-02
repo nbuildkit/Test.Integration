@@ -37,7 +37,11 @@ Imports System.Windows
 'app, and any theme specific resource dictionaries)
 <Assembly: ThemeInfo(ResourceDictionaryLocation.None, ResourceDictionaryLocation.SourceAssembly)>
 
-
-
 'The following GUID is for the ID of the typelib if this project is exposed to COM
 <Assembly: Guid("b3af1a13-c667-4318-a867-d7343c788705")>
+
+<Assembly: System.Diagnostics.CodeAnalysis.SuppressMessage(
+    "Microsoft.Usage",
+    "CA2243:AttributeStringLiteralsShouldParseCorrectly",
+    Justification = "It's a VCS revision, not a version")>
+<Assembly: AssemblyInformationalVersion("9.10.11-fake+12")>
