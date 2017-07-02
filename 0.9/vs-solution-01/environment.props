@@ -39,9 +39,6 @@
         **** SERVER PATHS ****
     -->
     <PropertyGroup>
-        <ArtifactsServerPath>$(UriArtefacts)\artifacts</ArtifactsServerPath>
-        <NugetFeedPath>$(UriNuGet)\nuget</NugetFeedPath>
-        <SymbolServerPath>$(UriSymbols)\symbols</SymbolServerPath>
     </PropertyGroup>
 
 
