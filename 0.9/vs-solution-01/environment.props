@@ -39,9 +39,9 @@
         **** SERVER PATHS ****
     -->
     <PropertyGroup>
-        <ArtifactsServerPath>${DirBuildTempTestOldestVbNet}\artifacts</ArtifactsServerPath>
-        <NugetFeedPath>${DirBuildTempTestOldestVbNet}\nuget</NugetFeedPath>
-        <SymbolServerPath>${DirBuildTempTestOldestVbNet}\symbols</SymbolServerPath>
+        <ArtifactsServerPath>$(UriArtefacts)\artifacts</ArtifactsServerPath>
+        <NugetFeedPath>$(UriNuGet)\nuget</NugetFeedPath>
+        <SymbolServerPath>$(UriSymbols)\symbols</SymbolServerPath>
     </PropertyGroup>
 
 
