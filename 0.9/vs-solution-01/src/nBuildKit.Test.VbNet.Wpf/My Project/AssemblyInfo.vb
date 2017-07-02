@@ -17,6 +17,8 @@ Imports System.Windows
 <Assembly: AssemblyTrademark("")>
 <Assembly: ComVisible(false)>
 
+<Assembly: CLSCompliant(true)>
+
 'In order to begin building localizable applications, set
 '<UICulture>CultureYouAreCodingWith</UICulture> in your .vbproj file
 'inside a <PropertyGroup>.  For example, if you are using US english
@@ -24,7 +26,7 @@ Imports System.Windows
 'NeutralResourceLanguage attribute below.  Update the "en-US" in the line
 'below to match the UICulture setting in the project file.
 
-'<Assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)>
+<Assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.MainAssembly)>
 
 
 'The ThemeInfo attribute describes where any theme specific and generic resource dictionaries can be found.
