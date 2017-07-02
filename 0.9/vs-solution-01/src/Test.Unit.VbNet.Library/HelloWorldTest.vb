@@ -1,10 +1,9 @@
-﻿Imports System.Text
-Imports Microsoft.VisualStudio.TestTools.UnitTesting
-Imports System.Reflection
+﻿Imports System.Reflection
 Imports NBuildKit.Test.VbNet.Library
 Imports System.Globalization
+Imports NUnit.Framework
 
-<TestClass()> Public Class HelloWorldTest
+<TestFixture()> Public Class HelloWorldTest
 
     Private Function AssemblyName(a As Assembly) As String
         Dim attr As AssemblyTitleAttribute = TryCast(a.GetCustomAttribute(GetType(AssemblyTitleAttribute)), AssemblyTitleAttribute)
@@ -16,7 +15,7 @@ Imports System.Globalization
         Return attr.InformationalVersion
     End Function
 
-    <TestMethod()> Public Sub SayHello()
+    <Test()> Public Sub SayHello()
         Dim helloWorld As HelloWorld = New HelloWorld()
         Dim txt As String = helloWorld.SayHello()
         Dim expected As String = String.Format( _

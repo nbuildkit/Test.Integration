@@ -468,6 +468,7 @@
             <PostSteps>
             </PostSteps>
         </BuildStepsToExecute>
+        <!--
         <BuildStepsToExecute Include="$(BuildStepsUnitTestMsTest)">
             <Properties>
                 Configuration=$(TestConfiguration);
@@ -498,6 +499,7 @@
             <PostSteps>
             </PostSteps>
         </BuildStepsToExecute>
+        -->
 
         <!--
         <BuildStepsToExecute Include="$(BuildStepsAnalyzeXml)">
@@ -727,12 +729,12 @@
         The solution path allows build templates, e.g. '$(DirSrc)\${CompanyName}\${ProductName}\MySolution.sln'
     -->
     <ItemGroup>
-        <SolutionsToBuild Include="$(DirSrc)\nBuildKit.Test.VbNet.sln">
+        <SolutionsToBuild Include="$(DirSrc)\nBuildKit.Test.sln">
             <Configuration>$(TestConfiguration)</Configuration>
             <Platform>$(Platform)</Platform>
             <Targets>Rebuild</Targets>
             <Properties></Properties>
-            <GeneratedAssembliesFile>$(DirBuildTemp)\nBuildKit.Test.VbNet.$(TestConfiguration).$(PlatformWithoutSpaces).props</GeneratedAssembliesFile>
+            <GeneratedAssembliesFile>$(DirBuildTemp)\nBuildKit.Test.$(TestConfiguration).$(PlatformWithoutSpaces).props</GeneratedAssembliesFile>
         </SolutionsToBuild>
     </ItemGroup>
 
