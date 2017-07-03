@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NBuildKit.Test.CSharp.Library;
-using NUnit.Framework;
 using System;
 using System.Globalization;
 using System.Reflection;
