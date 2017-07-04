@@ -515,6 +515,8 @@
             <PostSteps>
             </PostSteps>
         </DeployStepsToExecute>
+
+        <!--
         <DeployStepsToExecute Include="$(DeployStepsPushToHttp)">
             <Properties>
                 Configuration=$(ProductionConfiguration);
@@ -529,6 +531,8 @@
             <PostSteps>
             </PostSteps>
         </DeployStepsToExecute>
+        -->
+
         <DeployStepsToExecute Include="$(DeployStepsPushToSymbolServer)">
             <Properties>
                 Configuration=$(ProductionConfiguration);
