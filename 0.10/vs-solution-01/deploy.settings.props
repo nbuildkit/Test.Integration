@@ -486,6 +486,10 @@
             </PostSteps>
         </DeployStepsToExecute>
         -->
+        <!--
+
+            Inserted with dependencies
+
         <DeployStepsToExecute Include="$(DeployStepsPushToNuget)">
             <Properties>
                 Configuration=$(ProductionConfiguration);
@@ -500,6 +504,7 @@
             <PostSteps>
             </PostSteps>
         </DeployStepsToExecute>
+        -->
         <DeployStepsToExecute Include="$(DeployStepsPushToDirectory)">
             <Properties>
                 Configuration=$(ProductionConfiguration);
@@ -576,6 +581,10 @@
             </PostSteps>
         </DeployStepsToExecute>
         -->
+        <!--
+
+        Inserted with dependencies
+
         <DeployStepsToExecute Include="$(DeployStepsPushToGitRepository)">
             <Properties>
                 Configuration=$(ProductionConfiguration);
@@ -589,6 +598,42 @@
             </PreSteps>
             <PostSteps>
             </PostSteps>
+        </DeployStepsToExecute>
+        -->
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(ShouldLoadDeployStepsToExecute)' == 'true' ">
+        <DeployStepsToExecute Include="$(DeployStepsPushToGitRepository)">
+            <ExecuteAfter>DeployStepsPushToSymbolServer</ExecuteAfter>
+            <ExecuteBefore></ExecuteBefore>
+            <Groups>
+                deploy;
+                deploy.vcs.git.repository;
+            </Groups>
+            <PreSteps>
+            </PreSteps>
+            <PostSteps>
+            </PostSteps>
+            <Properties>
+                Configuration=$(ProductionConfiguration);
+                Platform=$(Platform);
+            </Properties>
+        </DeployStepsToExecute>
+        <DeployStepsToExecute Include="$(DeployStepsPushToNuget)">
+            <ExecuteAfter></ExecuteAfter>
+            <ExecuteBefore>DeployStepsPushToDirectory</ExecuteBefore>
+            <Groups>
+                deploy;
+                deploy.package.nuget;
+            </Groups>
+            <PreSteps>
+            </PreSteps>
+            <PostSteps>
+            </PostSteps>
+            <Properties>
+                Configuration=$(ProductionConfiguration);
+                Platform=$(Platform);
+            </Properties>
         </DeployStepsToExecute>
     </ItemGroup>
 

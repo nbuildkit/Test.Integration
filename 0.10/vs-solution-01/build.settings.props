@@ -847,6 +847,9 @@
             </PostSteps>
         </BuildStepsToExecute>
 
+        <!--
+            Inserted through a dependency
+
         <BuildStepsToExecute Include="$(BuildStepsBuildVisualStudioSolution)">
             <Properties>
             </Properties>
@@ -859,6 +862,7 @@
             <PostSteps>
             </PostSteps>
         </BuildStepsToExecute>
+        -->
 
         <BuildStepsToExecute Include="$(BuildStepsUnitTestNUnit)">
             <Properties>
@@ -988,6 +992,11 @@
             <PostSteps>
             </PostSteps>
         </BuildStepsToExecute>
+
+        <!--
+
+        Inserted via dependencies
+
         <BuildStepsToExecute Include="$(BuildStepsPackZip)">
             <Properties>
                 Configuration=$(ProductionConfiguration);
@@ -1001,6 +1010,43 @@
             </PreSteps>
             <PostSteps>
             </PostSteps>
+        </BuildStepsToExecute>
+        -->
+    </ItemGroup>
+
+    <!--
+        Additionally inserting some build steps
+    -->
+    <ItemGroup Condition=" '$(ShouldLoadBuildStepsToExecute)' == 'true' ">
+        <BuildStepsToExecute Include="$(BuildStepsBuildVisualStudioSolution)">
+            <ExecuteAfter></ExecuteAfter>
+            <ExecuteBefore>BuildStepsUnitTestNUnit</ExecuteBefore>
+            <Groups>
+                build;
+                build.visualstudio;
+            </Groups>
+            <PreSteps>
+            </PreSteps>
+            <PostSteps>
+            </PostSteps>
+            <Properties>
+            </Properties>
+        </BuildStepsToExecute>
+        <BuildStepsToExecute Include="$(BuildStepsPackZip)">
+            <ExecuteAfter>BuildStepsPackNuGet</ExecuteAfter>
+            <ExecuteBefore></ExecuteBefore>
+            <Groups>
+                package;
+                package.zip;
+            </Groups>
+            <PreSteps>
+            </PreSteps>
+            <PostSteps>
+            </PostSteps>
+            <Properties>
+                Configuration=$(ProductionConfiguration);
+                Platform=$(Platform)
+            </Properties>
         </BuildStepsToExecute>
     </ItemGroup>
 
