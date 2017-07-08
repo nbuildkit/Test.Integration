@@ -552,59 +552,63 @@
     -->
     <ItemGroup Condition=" '$(ShouldLoadBuildStepsToExecute)' == 'true' ">
         <BuildStepsToExecute Include="$(BuildStepsPrepareWorkspace)">
-            <Properties>
-            </Properties>
             <Groups>
                 clean;
                 prepare;
                 prepare.clean;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsPrepareWorkspace</Id>
             <PostSteps>
             </PostSteps>
+            <PreSteps>
+            </PreSteps>
+            <Properties>
+            </Properties>
         </BuildStepsToExecute>
 
         <!--
         <BuildStepsToExecute Include="$(BuildStepsBuildTargetsAssembly)">
-            <Properties>
-            </Properties>
             <Groups>
                 prepare;
                 prepare.bootstrap;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsBuildTargetsAssembly</Id>
             <PostSteps>
             </PostSteps>
+            <PreSteps>
+            </PreSteps>
+            <Properties>
+            </Properties>
         </BuildStepsToExecute>
 
         <BuildStepsToExecute Include="$(BuildStepsGenerateTargetsFile)">
-            <Properties>
-            </Properties>
             <Groups>
                 prepare;
                 prepare.bootstrap;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsGenerateTargetsFile</Id>
             <PostSteps>
             </PostSteps>
+            <PreSteps>
+            </PreSteps>
+            <Properties>
+            </Properties>
         </BuildStepsToExecute>
         -->
 
         <BuildStepsToExecute Include="$(BuildStepsPrepareRestoreNuGet)">
-            <Properties>
-            </Properties>
             <Groups>
                 prepare;
                 prepare.restore;
                 prepare.restore.nuget;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsPrepareRestoreNuGet</Id>
             <PostSteps>
             </PostSteps>
+            <PreSteps>
+            </PreSteps>
+            <Properties>
+            </Properties>
         </BuildStepsToExecute>
 
         <!--
@@ -612,8 +616,6 @@
             building.
         -->
         <BuildStepsToExecute Include="$(BuildStepsPrepareVcsBranch)">
-            <Properties>
-            </Properties>
             <Groups>
                 prepare;
                 prepare.buildserver;
@@ -621,36 +623,41 @@
                 prepare.vcs;
                 prepare.vcs.vcssetbranch;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsPrepareVcsBranch</Id>
             <PostSteps>
             </PostSteps>
-        </BuildStepsToExecute>
-        <BuildStepsToExecute Include="$(BuildStepsPrepareVcsInfo)">
+            <PreSteps>
+            </PreSteps>
             <Properties>
             </Properties>
+        </BuildStepsToExecute>
+        <BuildStepsToExecute Include="$(BuildStepsPrepareVcsInfo)">
             <Groups>
                 prepare;
                 prepare.get;
                 prepare.get.vcsinfo;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsPrepareVcsInfo</Id>
             <PostSteps>
             </PostSteps>
-        </BuildStepsToExecute>
-        <BuildStepsToExecute Include="$(BuildStepsPrepareGetIssueIds)">
+            <PreSteps>
+            </PreSteps>
             <Properties>
             </Properties>
+        </BuildStepsToExecute>
+        <BuildStepsToExecute Include="$(BuildStepsPrepareGetIssueIds)">
             <Groups>
                 prepare;
                 prepare.get;
                 prepare.get.issueids;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsPrepareGetIssueIds</Id>
             <PostSteps>
             </PostSteps>
+            <PreSteps>
+            </PreSteps>
+            <Properties>
+            </Properties>
         </BuildStepsToExecute>
 
         <!--
@@ -659,8 +666,6 @@
             we merged to.
         -->
         <BuildStepsToExecute Include="$(BuildStepsPrepareVcsMerge)">
-            <Properties>
-            </Properties>
             <Groups>
                 prepare;
                 prepare.buildserver;
@@ -668,10 +673,13 @@
                 prepare.vcs;
                 prepare.vcs.merge;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsPrepareVcsMerge</Id>
             <PostSteps>
             </PostSteps>
+            <PreSteps>
+            </PreSteps>
+            <Properties>
+            </Properties>
         </BuildStepsToExecute>
 
         <!--
@@ -679,23 +687,22 @@
             build on because we might have done some merging.
         -->
         <BuildStepsToExecute Include="$(BuildStepsPrepareGetVersion)">
-            <Properties>
-            </Properties>
             <Groups>
                 prepare;
                 prepare.get;
                 prepare.get.version;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsPrepareGetVersion</Id>
             <PostSteps>
             </PostSteps>
+            <PreSteps>
+            </PreSteps>
+            <Properties>
+            </Properties>
         </BuildStepsToExecute>
         <BuildStepsToExecute
             Condition=" '$(IsGitFlow)' == 'true' AND ('$(IsReleaseBranch)' == 'true' OR '$(IsHotfixBranch)' == 'true') "
             Include="$(BuildStepsPrepareTagVcs)">
-            <Properties>
-            </Properties>
             <Groups>
                 prepare;
                 prepare.buildserver;
@@ -703,130 +710,140 @@
                 prepare.vcs;
                 prepare.vcs.tag;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsPrepareTagVcs</Id>
             <PostSteps>
             </PostSteps>
+            <PreSteps>
+            </PreSteps>
+            <Properties>
+            </Properties>
         </BuildStepsToExecute>
 
         <BuildStepsToExecute Include="$(BuildStepsPrepareReleaseNotes)">
-            <Properties>
-            </Properties>
             <Groups>
                 prepare;
                 prepare.get;
                 prepare.get.releasenotes;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsPrepareReleaseNotes</Id>
             <PostSteps>
             </PostSteps>
+            <PreSteps>
+            </PreSteps>
+            <Properties>
+            </Properties>
         </BuildStepsToExecute>
 
         <!--
         <BuildStepsToExecute Include="$(BuildStepsPrepareRestoreNpm)">
-            <Properties>
-            </Properties>
             <Groups>
                 prepare;
                 prepare.restore;
                 prepare.restore.npm;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsPrepareRestoreNpm</Id>
             <PostSteps>
             </PostSteps>
-        </BuildStepsToExecute>
-        <BuildStepsToExecute Include="$(BuildStepsPrepareRestoreBower)">
+            <PreSteps>
+            </PreSteps>
             <Properties>
             </Properties>
+        </BuildStepsToExecute>
+        <BuildStepsToExecute Include="$(BuildStepsPrepareRestoreBower)">
             <Groups>
                 prepare;
                 prepare.restore;
                 prepare.restore.bower;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsPrepareRestoreBower</Id>
             <PostSteps>
             </PostSteps>
+            <PreSteps>
+            </PreSteps>
+            <Properties>
+            </Properties>
         </BuildStepsToExecute>
         -->
 
         <BuildStepsToExecute Include="$(BuildStepsPrepareCopyNuGet)">
-            <Properties>
-            </Properties>
             <Groups>
                 prepare;
                 prepare.copy;
                 prepare.copy.nuget;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsPrepareCopyNuGet</Id>
             <PostSteps>
             </PostSteps>
-        </BuildStepsToExecute>
-        <BuildStepsToExecute Include="$(BuildStepsPrepareCopyHttp)">
+            <PreSteps>
+            </PreSteps>
             <Properties>
             </Properties>
+        </BuildStepsToExecute>
+        <BuildStepsToExecute Include="$(BuildStepsPrepareCopyHttp)">
             <Groups>
                 prepare;
                 prepare.copy;
                 prepare.copy.url;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsPrepareCopyHttp</Id>
             <PostSteps>
             </PostSteps>
-        </BuildStepsToExecute>
-        <BuildStepsToExecute Include="$(BuildStepsPrepareCopyFiles)">
+            <PreSteps>
+            </PreSteps>
             <Properties>
             </Properties>
+        </BuildStepsToExecute>
+        <BuildStepsToExecute Include="$(BuildStepsPrepareCopyFiles)">
             <Groups>
                 prepare;
                 prepare.copy;
                 prepare.copy.files;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsPrepareCopyFiles</Id>
             <PostSteps>
             </PostSteps>
-        </BuildStepsToExecute>
-        <BuildStepsToExecute Include="$(BuildStepsPrepareCopyArchive)">
+            <PreSteps>
+            </PreSteps>
             <Properties>
             </Properties>
+        </BuildStepsToExecute>
+        <BuildStepsToExecute Include="$(BuildStepsPrepareCopyArchive)">
             <Groups>
                 prepare;
                 prepare.copy;
                 prepare.copy.archive;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsPrepareCopyArchive</Id>
             <PostSteps>
             </PostSteps>
+            <PreSteps>
+            </PreSteps>
+            <Properties>
+            </Properties>
         </BuildStepsToExecute>
 
         <BuildStepsToExecute Include="$(BuildStepsPrepareAssemblyInfo)">
-            <Properties>
-            </Properties>
             <Groups>
                 prepare;
                 prepare.generate;
                 prepare.generate.assemblyinfo;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsPrepareAssemblyInfo</Id>
             <PostSteps>
             </PostSteps>
+            <PreSteps>
+            </PreSteps>
+            <Properties>
+            </Properties>
         </BuildStepsToExecute>
         <!--
         <BuildStepsToExecute Include="$(BuildStepsPrepareGenerateLicenses)">
-            <Properties>
-            </Properties>
             <Groups>
                 prepare;
                 prepare.generate;
                 prepare.generate.licenses;
             </Groups>
+            <Id>BuildStepsPrepareGenerateLicenses</Id>
             <PreSteps>
             </PreSteps>
             <PostSteps>
@@ -834,163 +851,173 @@
         </BuildStepsToExecute>
         -->
         <BuildStepsToExecute Include="$(BuildStepsPrepareGenerateFiles)">
-            <Properties>
-            </Properties>
             <Groups>
                 prepare;
                 prepare.generate;
                 prepare.generate.files;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsPrepareGenerateFiles</Id>
             <PostSteps>
             </PostSteps>
+            <PreSteps>
+            </PreSteps>
+            <Properties>
+            </Properties>
         </BuildStepsToExecute>
 
         <!--
             Inserted through a dependency
 
         <BuildStepsToExecute Include="$(BuildStepsBuildVisualStudioSolution)">
-            <Properties>
-            </Properties>
             <Groups>
                 build;
                 build.visualstudio;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsBuildVisualStudioSolution</Id>
             <PostSteps>
             </PostSteps>
+            <PreSteps>
+            </PreSteps>
+            <Properties>
+            </Properties>
         </BuildStepsToExecute>
         -->
 
         <BuildStepsToExecute Include="$(BuildStepsUnitTestNUnit)">
-            <Properties>
-                Configuration=$(TestConfiguration);
-                Platform=$(Platform)
-            </Properties>
             <Groups>
                 test;
                 test.unittest;
                 test.unittest.nunit;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsUnitTestNUnit</Id>
             <PostSteps>
             </PostSteps>
-        </BuildStepsToExecute>
-        <!--
-        <BuildStepsToExecute Include="$(BuildStepsUnitTestMsTest)">
+            <PreSteps>
+            </PreSteps>
             <Properties>
                 Configuration=$(TestConfiguration);
                 Platform=$(Platform)
             </Properties>
+        </BuildStepsToExecute>
+        <!--
+        <BuildStepsToExecute Include="$(BuildStepsUnitTestMsTest)">
             <Groups>
                 test;
                 test.unittest;
                 test.unittest.mstest;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsUnitTestMsTest</Id>
             <PostSteps>
             </PostSteps>
-        </BuildStepsToExecute>
-        <BuildStepsToExecute Include="$(BuildStepsUnitTestVsTest)">
+            <PreSteps>
+            </PreSteps>
             <Properties>
                 Configuration=$(TestConfiguration);
                 Platform=$(Platform)
             </Properties>
+        </BuildStepsToExecute>
+        <BuildStepsToExecute Include="$(BuildStepsUnitTestVsTest)">
             <Groups>
                 test;
                 test.unittest;
                 test.unittest.vstest;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsUnitTestVsTest</Id>
             <PostSteps>
             </PostSteps>
+            <PreSteps>
+            </PreSteps>
+            <Properties>
+                Configuration=$(TestConfiguration);
+                Platform=$(Platform)
+            </Properties>
         </BuildStepsToExecute>
         -->
 
         <!--
         <BuildStepsToExecute Include="$(BuildStepsAnalyzeXml)">
-            <Properties>
-                Configuration=$(TestConfiguration);
-                Platform=$(Platform)
-            </Properties>
             <Groups>
                 test;
                 test.analyze;
                 test.analyze.xml;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsAnalyzeXml</Id>
             <PostSteps>
             </PostSteps>
-        </BuildStepsToExecute>
-        -->
-        <BuildStepsToExecute Include="$(BuildStepsAnalyzeBinariesFxCop)">
+            <PreSteps>
+            </PreSteps>
             <Properties>
                 Configuration=$(TestConfiguration);
                 Platform=$(Platform)
             </Properties>
+        </BuildStepsToExecute>
+        -->
+        <BuildStepsToExecute Include="$(BuildStepsAnalyzeBinariesFxCop)">
             <Groups>
                 test;
                 test.analyze;
                 test.analyze.fxcop;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsAnalyzeBinariesFxCop</Id>
             <PostSteps>
             </PostSteps>
+            <PreSteps>
+            </PreSteps>
+            <Properties>
+                Configuration=$(TestConfiguration);
+                Platform=$(Platform)
+            </Properties>
         </BuildStepsToExecute>
 
         <!--
         <BuildStepsToExecute Include="$(BuildStepsBuildILMerge)">
-            <Properties>
-                Configuration=$(ProductionConfiguration);
-                Platform=$(Platform)
-            </Properties>
             <Groups>
                 build;
                 build.ilmerge;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsBuildILMerge</Id>
             <PostSteps>
             </PostSteps>
-        </BuildStepsToExecute>
-        -->
-
-        <BuildStepsToExecute Include="$(BuildStepsBuildWyam)">
+            <PreSteps>
+            </PreSteps>
             <Properties>
                 Configuration=$(ProductionConfiguration);
                 Platform=$(Platform)
             </Properties>
+        </BuildStepsToExecute>
+        -->
+
+        <BuildStepsToExecute Include="$(BuildStepsBuildWyam)">
             <Groups>
                 build;
                 build.doc;
                 build.doc.wyam;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsBuildWyam</Id>
             <PostSteps>
             </PostSteps>
-        </BuildStepsToExecute>
-
-        <BuildStepsToExecute Include="$(BuildStepsPackNuGet)">
+            <PreSteps>
+            </PreSteps>
             <Properties>
                 Configuration=$(ProductionConfiguration);
                 Platform=$(Platform)
             </Properties>
+        </BuildStepsToExecute>
+
+        <BuildStepsToExecute Include="$(BuildStepsPackNuGet)">
             <Groups>
                 package;
                 package.nuget;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsPackNuGet</Id>
             <PostSteps>
             </PostSteps>
+            <PreSteps>
+            </PreSteps>
+            <Properties>
+                Configuration=$(ProductionConfiguration);
+                Platform=$(Platform)
+            </Properties>
         </BuildStepsToExecute>
 
         <!--
@@ -998,18 +1025,19 @@
         Inserted via dependencies
 
         <BuildStepsToExecute Include="$(BuildStepsPackZip)">
-            <Properties>
-                Configuration=$(ProductionConfiguration);
-                Platform=$(Platform)
-            </Properties>
             <Groups>
                 package;
                 package.zip;
             </Groups>
-            <PreSteps>
-            </PreSteps>
+            <Id>BuildStepsPackZip</Id>
             <PostSteps>
             </PostSteps>
+            <PreSteps>
+            </PreSteps>
+            <Properties>
+                Configuration=$(ProductionConfiguration);
+                Platform=$(Platform)
+            </Properties>
         </BuildStepsToExecute>
         -->
     </ItemGroup>
@@ -1025,6 +1053,7 @@
                 build;
                 build.visualstudio;
             </Groups>
+            <Id>BuildStepsBuildVisualStudioSolution</Id>
             <PreSteps>
             </PreSteps>
             <PostSteps>
@@ -1039,6 +1068,7 @@
                 package;
                 package.zip;
             </Groups>
+            <Id>BuildStepsPackZip</Id>
             <PreSteps>
             </PreSteps>
             <PostSteps>
