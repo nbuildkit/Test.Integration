@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<archive>
+    <name>testdeploy-${VersionSemantic}</name>
+    <files>
+        <file
+            src="${DirSrc}\nBuildKit.Test.CSharp.Console\bin\${Configuration}\nBuildKit.Test.CSharp.Console.exe"
+            target="" />
+    </files>
+</archive>

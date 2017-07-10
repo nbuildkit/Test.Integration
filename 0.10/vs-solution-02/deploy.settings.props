@@ -188,16 +188,14 @@
         allow the use of build templates, e.g. $(DirBuildDeploy)\myarchive-${VersionSemantic}.zip
     -->
     <ItemGroup Condition=" '$(ShouldLoadPushToGitBranchSpecs)' == 'true' ">
-        <!--
         <PushToGitBranchSpecs
             Condition=" '$(DirBuildDeploy)' != '' "
-            Include="$(DirBuildDeploy)\myarchive-${VersionSemantic}.zip">
+            Include="$(DirBuildDeploy)\testdeploy-${VersionSemantic}.zip">
              <Repository>$(GitRemoteRepository)</Repository>
-             <Branch>master</Branch>
+             <Branch>testdeploy</Branch>
              <ExtractZipFiles>true</ExtractZipFiles>
              <CommitMessage>New changes</CommitMessage>
         </PushToGitBranchSpecs>
-        -->
     </ItemGroup>
 
 
@@ -562,20 +560,6 @@
             <PostSteps>
             </PostSteps>
         </DeployStepsToExecute>
-         <DeployStepsToExecute Include="$(DeployStepsPushToGitBranch)">
-            <Properties>
-                Configuration=$(ProductionConfiguration);
-                Platform=$(Platform);
-            </Properties>
-            <Groups>
-                deploy;
-                deploy.vcs.git.branch;
-            </Groups>
-            <PreSteps>
-            </PreSteps>
-            <PostSteps>
-            </PostSteps>
-        </DeployStepsToExecute>
         -->
         <DeployStepsToExecute Include="$(DeployStepsPushToGitRepository)">
             <Properties>
@@ -585,6 +569,21 @@
             <Groups>
                 deploy;
                 deploy.vcs.git.repository;
+            </Groups>
+            <PreSteps>
+            </PreSteps>
+            <PostSteps>
+            </PostSteps>
+        </DeployStepsToExecute>
+
+        <DeployStepsToExecute Include="$(DeployStepsPushToGitBranch)">
+            <Properties>
+                Configuration=$(ProductionConfiguration);
+                Platform=$(Platform);
+            </Properties>
+            <Groups>
+                deploy;
+                deploy.vcs.git.branch;
             </Groups>
             <PreSteps>
             </PreSteps>

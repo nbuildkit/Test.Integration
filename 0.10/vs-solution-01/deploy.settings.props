@@ -187,16 +187,14 @@
         allow the use of build templates, e.g. $(DirBuildDeploy)\myarchive-${VersionSemantic}.zip
     -->
     <ItemGroup Condition=" '$(ShouldLoadPushToGitBranchSpecs)' == 'true' ">
-        <!--
         <PushToGitBranchSpecs
             Condition=" '$(DirBuildDeploy)' != '' "
-            Include="$(DirBuildDeploy)\myarchive-${VersionSemantic}.zip">
+            Include="$(DirBuildDeploy)\testdeploy-${VersionSemantic}.zip">
              <Repository>$(GitRemoteRepository)</Repository>
-             <Branch>master</Branch>
+             <Branch>testdeploy</Branch>
              <ExtractZipFiles>true</ExtractZipFiles>
              <CommitMessage>New changes</CommitMessage>
         </PushToGitBranchSpecs>
-        -->
     </ItemGroup>
 
 
@@ -583,24 +581,9 @@
                 Platform=$(Platform);
             </Properties>
         </DeployStepsToExecute>
-         <DeployStepsToExecute Include="$(DeployStepsPushToGitBranch)">
-            <Groups>
-                deploy;
-                deploy.vcs.git.branch;
-            </Groups>
-            <Id>DeployStepsPushToGitBranch</Id>
-            <PostSteps>
-            </PostSteps>
-            <PreSteps>
-            </PreSteps>
-            <Properties>
-                Configuration=$(ProductionConfiguration);
-                Platform=$(Platform);
-            </Properties>
-        </DeployStepsToExecute>
         -->
-        <!--
 
+        <!--
         Inserted with dependencies
 
         <DeployStepsToExecute Include="$(DeployStepsPushToGitRepository)">
@@ -619,12 +602,28 @@
             </Properties>
         </DeployStepsToExecute>
         -->
+
+        <DeployStepsToExecute Include="$(DeployStepsPushToGitBranch)">
+            <Groups>
+                deploy;
+                deploy.vcs.git.branch;
+            </Groups>
+            <Id>DeployStepsPushToGitBranch</Id>
+            <PostSteps>
+            </PostSteps>
+            <PreSteps>
+            </PreSteps>
+            <Properties>
+                Configuration=$(ProductionConfiguration);
+                Platform=$(Platform);
+            </Properties>
+        </DeployStepsToExecute>
     </ItemGroup>
 
     <ItemGroup Condition=" '$(ShouldLoadDeployStepsToExecute)' == 'true' ">
         <DeployStepsToExecute Include="$(DeployStepsPushToGitRepository)">
             <ExecuteAfter>DeployStepsPushToSymbolServer</ExecuteAfter>
-            <ExecuteBefore></ExecuteBefore>
+            <ExecuteBefore>DeployStepsPushToGitBranch</ExecuteBefore>
             <Groups>
                 deploy;
                 deploy.vcs.git.repository;
